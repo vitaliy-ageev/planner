@@ -1,0 +1,259 @@
+html {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* For all elements of the page */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: #FEDD55;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    background: none;
+    outline: none;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+   
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.container-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/********************************************************/
+/*Form*/
+/********************************************************/
+/* Signin & Signup */
+.auth-block {
+    width: 500px;
+    height: 600px;
+    margin: 20px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+.auth-header {
+    width: 100%;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.logo-image {
+    width: 60px;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.signin-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.auth-title-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.auth-title {
+    cursor: default;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.auth-subtitle {
+    cursor: default;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #000;
+}
+
+a.auth {
+    color: #0057e2;
+    transition: all .1s linear;
+}
+
+a.auth:hover {
+    color: #3682fc;
+}
+
+/*======*/
+
+/* Registration Form */
+.signin-form {
+    width: 100%;
+    margin: 30px auto;
+}
+
+.signin-form-container {
+    width: 100%;
+
+}
+
+/* Name */
+.signin-name {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.signin-name-span {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    vertical-align: top;
+}
+
+.signin-name-input {
+    width: 90%;
+    border-width: 0;
+    padding-right: 20px;
+    color: #000;
+    height: 32px;
+    font-size: 15px;
+    cursor: default;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 100%;
+    vertical-align: top;
+    border: 0 solid transparent;
+    outline: 0;
+    background: 0 0;
+}
+
+.signig-name-textInput-box {
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.textInputBox.focus {
+    border-bottom: 2px solid #FFDB4D;
+    border-bottom: 2px solid #1B82DE;
+}
+
+.signin-name-label {
+    width: 100%;
+    min-width: 245px;
+    display: inline-block;
+    position: absolute;
+    z-index: 200;
+    left: 0;
+    top: 2px;
+    height: 15px;
+    cursor: default;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #999;
+    transform: translate(0,5px);
+    transition: transform .5s,-webkit-transform .5s,-o-transform .5s;
+    white-space: nowrap;
+    margin-top: -3px;
+}
+
+label.focus  {
+    transform: scale(.8) translate(-55px, -20px);
+}
+
+label.notempty  {
+    transform: scale(.8) translate(-55px, -20px);
+}
+
+/* Button View */
+.auth-button-views {
+    position: absolute;
+    z-index: 300;
+    top: 5px;
+    right: 0;
+}
+
+/* Svg Views Icon */
+.auth-button-views-icon {
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+    display: none;
+}
+
+.auth-button-views-icon.active {
+    display: block;
+}
+
+/* Svg Views Closed Icon */
+.auth-button-views-icon-closed {
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+    fill: #B3B3B3;
+    display: none;
+}
+
+.auth-button-views-icon-closed.active {
+    display: block;
+}
