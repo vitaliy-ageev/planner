@@ -17,10 +17,6 @@ body {
     box-sizing: border-box;
 }
 
-*::selection {
-    background: #FEDD55;
-}
-
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
@@ -60,7 +56,6 @@ main {
 /* Signin & Signup */
 .auth-block {
     width: 500px;
-    height: 600px;
     margin: 20px;
     padding: 40px;
     background: #fff;
@@ -88,8 +83,11 @@ main {
 .logo-image {
     width: 60px;
     background-size: cover;
-    margin-bottom: 20px;
 }
+
+/*********************************/
+/* Sign In */
+/*********************************/
 
 .signin-block {
     width: 100%;
@@ -99,145 +97,92 @@ main {
     align-items: flex-start;
 }
 
-.auth-title-block {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.auth-title {
-    cursor: default;
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 5px;
-}
-
-.auth-subtitle {
-    cursor: default;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #000;
-}
-
-a.auth {
-    color: #0057e2;
-    transition: all .1s linear;
-}
-
-a.auth:hover {
-    color: #3682fc;
-}
-
-/*======*/
 
 /* Registration Form */
 .signin-form {
     width: 100%;
-    margin: 30px auto;
+    margin: 20px auto auto auto;
 }
 
 .signin-form-container {
     width: 100%;
-
 }
 
-/* Name */
-.signin-name {
-    margin-bottom: 30px;
+/* Form Field */
+.signin-field {
+    margin-top: 25px;
     position: relative;
 }
 
-.signin-name-span {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
+.signin-field:first-child {
+    margin-top: 0;
+}
+
+.signin-label-field {
+    cursor: default;
     width: 100%;
-    vertical-align: top;
 }
 
-.signin-name-input {
-    width: 90%;
-    border-width: 0;
-    padding-right: 20px;
+.signin-label {
+    font-size: 16px;
+    font-weight: 600;
     color: #000;
-    height: 32px;
-    font-size: 15px;
-    cursor: default;
-    position: relative;
-    z-index: 2;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 100%;
-    vertical-align: top;
-    border: 0 solid transparent;
-    outline: 0;
-    background: 0 0;
-}
-
-.signig-name-textInput-box {
-    border-width: 0 0 1px 0;
-    border-bottom: 1px solid rgba(0,0,0,.2);
-    background-color: #fff;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-sizing: border-box;
-}
-
-.textInputBox.focus {
-    border-bottom: 2px solid #FFDB4D;
-    border-bottom: 2px solid #1B82DE;
-}
-
-.signin-name-label {
-    width: 100%;
-    min-width: 245px;
-    display: inline-block;
-    position: absolute;
-    z-index: 200;
-    left: 0;
-    top: 2px;
-    height: 15px;
-    cursor: default;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #999;
-    transform: translate(0,5px);
-    transition: transform .5s,-webkit-transform .5s,-o-transform .5s;
     white-space: nowrap;
-    margin-top: -3px;
 }
 
-label.focus  {
-    transform: scale(.8) translate(-55px, -20px);
+.signin-input-field {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    vertical-align: top;
 }
 
-label.notempty  {
-    transform: scale(.8) translate(-55px, -20px);
+.signin-input {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    appearance: none;
+    backgroun-clip: padding-box;
+    border: 2px solid #e9e9e9;
+    background: #f5f5f5;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 5px 0 0 0;
+    color: #000;
+    font-size: 15px;
+    vertical-align: top;
+    outline: 0;
+    z-index: 2;
+    transition: all .1s linear;
+}
+
+#password {
+    padding: 0 40px 0 10px;
+}
+
+.signin-input:hover {
+    border: 2px solid #d1d1d1;
+}
+
+.signin-input.focus {
+    border: 2px solid #153ee6;
 }
 
 /* Button View */
 .auth-button-views {
     position: absolute;
     z-index: 300;
-    top: 5px;
-    right: 0;
+    top: 15px;
+    right: 15px;
 }
 
 /* Svg Views Icon */
 .auth-button-views-icon {
     cursor: pointer;
-    width: 23px;
-    height: 23px;
+    width: 20px;
+    height: 20px;
     display: none;
 }
 
@@ -248,12 +193,65 @@ label.notempty  {
 /* Svg Views Closed Icon */
 .auth-button-views-icon-closed {
     cursor: pointer;
-    width: 23px;
-    height: 23px;
+    width: 20px;
+    height: 20px;
     fill: #B3B3B3;
     display: none;
 }
 
 .auth-button-views-icon-closed.active {
     display: block;
+}
+
+/* Password Forgot */
+.password-forgot {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.password-forgot {
+    cursor: pointer;
+    font-size: 1.01rem;
+    font-weight: 500;
+    color: #0057e2;
+    text-decoration: none;
+    transition: all .1s linear;
+}
+
+.password-forgot:hover {
+    text-decoration: underline;
+}
+
+/* Button Submit */
+.signin-submit {
+    position: relative;
+    margin: 25px 0;
+}
+
+.signin-submit-buton {
+    cursor: default;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    background: #f1f1f1;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    transition: all .1s linear;
+}
+
+.signin-submit-buton.active {
+    cursor: pointer;
+    background: #1B82DE;
+}
+
+.signin-submit-buton.active:hover {
+    background: #1b6cde;
 }

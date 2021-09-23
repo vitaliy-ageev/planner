@@ -1,6 +1,9 @@
 // Фокусировка инпутов формы
-let authField = document.querySelectorAll('.auth-field'),
-    forEach = Array.prototype.forEach;
+let authField = document.querySelectorAll('.signin-field'),
+    forEach = Array.prototype.forEach,
+    login = document.getElementById('login'),
+    password = document.getElementById('password'),
+    submit = document.getElementById('submit');
 
 forEach.call(authField, function (_this) {
     this.addEventListener('focusin', ClassAdd(_this, true));
@@ -12,26 +15,21 @@ function ClassAdd (_this, _true) {
     let event;
     _true === true ? event = 'focusin' : event = 'focusout';
     _this.addEventListener(`${event}`, function () {
-        let labels = this.getElementsByTagName('label'),
-            inputs = this.getElementsByTagName('input'),
-            textInputs = this.querySelectorAll('.textInputBox');
-        for (let label of labels) {
-            for (let textInput of textInputs) {
-                if(event === 'focusin') {
-                    label.classList.add('focus');
-                    textInput.classList.add('focus');
-                } else {
-                    label.classList.remove('focus');
-                    textInput.classList.remove('focus');
-                }
+        let inputs = this.getElementsByTagName('input');
+        for (let input of inputs) {
+            if(event === 'focusin') {
+                input.classList.add('focus');
+            } else {
+                input.classList.remove('focus');
             }
-            for (let input of inputs) {
-                if(input.value.length >= 1) {
-                    label.classList.add('notempty');
+
+            input.addEventListener('input', () => {
+                if(login.value.length >= 1 && password.value.length >= 1) {
+                    submit.classList.add('active');
                 } else {
-                    label.classList.remove('notempty');
+                    submit.classList.remove('active');
                 }
-            }
+            })
         }
     })
 }

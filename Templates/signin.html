@@ -29,28 +29,26 @@
                     </div>
                     <!-- Sign In -->
                     <div class="signin-block">
-                        <div class="auth-title-block">
-                            <h1 class="auth-title title">
-                                Войти
-                            </h1>
-                            <div class="auth-subtitle">
-                                Новый пользователь?
-                                <a href="#" class="auth signup">Создайте учетную запись</a>
-                            </div>
-                        </div>
+                        <!-- Sign In Form -->
                         <form action="." class="signin-form" autocomplete="off" method="POST">
                             <div class="signin-form-container">
-<!--                                Name-->
-                                <div class="signin-name auth-field">
-                                    <span class="signin-name-span">
-                                        <input id="firstname" type="text" name="firstname" class="signin-name-input auth-field" required="" autofocus="">
-                                        <span class="signig-name-textInput-box textInputBox focus"></span>
+                                <!--Name-->
+                                <div class="signin-field">
+                                    <span class="signin-label-field">
+                                        <label for="firstname" class="signin-label">Имя</label>
                                     </span>
-                                    <label for="firstname" class="signin-name-label auth-label focus">Имя</label>
+                                    <span class="signin-input-field">
+                                        <input id="login" type="text" name="firstname" class="signin-input focus" required="" autofocus="">
+                                    </span>
                                 </div>
-<!--                                Password-->
-                                <div class="signin-name auth-field">
-                                    <!--Button View-->
+                                <!-- Password -->
+                                <div class="signin-field">
+                                    <span class="signin-label-field">
+                                        <label for="password" class="signin-label">Введите пароль</label>
+                                    </span>
+                                    <span class="signin-input-field">
+                                        <input id="password" type="password" name="password" class="signin-input" required="">
+                                        <!-- Button View -->
                                     <div class="auth-button-views">
                                         <!--Svg Views Icon-->
                                         <svg class="auth-button-views-icon active" version="1.1" id="views_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.85 488.85" style="enable-background:new 0 0 488.85 488.85;" xml:space="preserve">
@@ -110,11 +108,19 @@
 </svg>
 
                                     </div>
-                                    <span class="signin-name-span">
-                                        <input id="password" type="password" name="password" class="signin-name-input auth-field" required="">
-                                        <span class="signig-name-textInput-box textInputBox"></span>
                                     </span>
-                                    <label for="password" class="signin-name-label auth-label">Введите пароль</label>
+                                </div>
+                                <!-- Forgot Password -->
+                                <div class="password-forgot">
+                                    <a href="" class="password-forgot">
+                                        Проблемы со входом в систему?
+                                    </a>
+                                </div>
+                                <!-- Button Submit-->
+                                <div class="signin-submit">
+                                    <button id ='submit' type="submit" class="signin-submit-buton" autocomplete="of">
+                                        Войти
+                                    </button>
                                 </div>
                             </div>
                         </form>
