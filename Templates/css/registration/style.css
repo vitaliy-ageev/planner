@@ -8,7 +8,7 @@ html {
 
 body {
     margin: 0;
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     overflow: hidden;
 }
 
@@ -65,7 +65,7 @@ main {
     padding: 40px;
     background: #fff;
     border-radius: 6px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.03);
     z-index: 3;
 }
 
