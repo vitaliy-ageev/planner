@@ -1,10 +1,69 @@
-// Фокусировка инпутов формы
-let authField = document.querySelectorAll('.signin-field'),
+let authField = document.querySelectorAll('.form-field'),
     forEach = Array.prototype.forEach,
-    login = document.getElementById('login'),
-    password = document.getElementById('password'),
-    submit = document.getElementById('submit');
+    formInputs = document.querySelectorAll('.form-input'),
+    passwordInputs = document.querySelectorAll('.input-password'),
+    navigationItems = document.querySelectorAll('.authorization-navigation-item'),
+    welcome = document.getElementById('welcome'),
+    join = document.getElementById('join'),
+    signIn = document.getElementById('signin'),
+    signUp = document.getElementById('signup');
 
+let signinLogin = document.forms['signin-form']['signin-login'],
+    signinPassword = document.forms['signin-form']['signin-password'],
+    signupLogin = document.forms['signup-form']['signup-login'],
+    signupEmail = document.forms['signup-form']['signup-email'],
+    signupPassword = document.forms['signup-form']['signup-password'],
+    signupPasswordRepear = document.forms['signup-form']['signup-password-repeat'];
+
+// Навигация
+// Проходимся циклом по всем кнопкам и сначала удаляем класс у всех кнопок, а потом добавляем текущей
+forEach.call(navigationItems, (_this) => {
+    _this.addEventListener('click', () => {
+        for (let navigationItem of navigationItems) {
+            navigationItem.classList.remove('active');
+        }
+        _this.classList.add('active');
+
+        if (_this.getAttribute('name') === 'registration') {
+            welcome.style.display = 'none';
+            join.style.display = 'block';
+            signUp.classList.add('active');
+            document.getElementById('authorization').classList.add('registration');
+            signIn.classList.remove('active');
+
+            signupLogin.focus();
+
+            signinLogin.value = '';
+            signinPassword.value = '';
+
+            signupLogin.value = '';
+            signupEmail.value = '';
+            signupPassword.value = '';
+            signupPasswordRepear.value = '';
+
+            document.title = 'Регистрация - Planner';
+        } else {
+            welcome.style.display = 'block';
+            join.style.display = 'none';
+            signIn.classList.add('active');
+            document.getElementById('authorization').classList.remove('registration');
+            signUp.classList.remove('active');
+            signinLogin.focus();
+
+            signinLogin.value = '';
+            signinPassword.value = '';
+
+            signupLogin.value = '';
+            signupEmail.value = '';
+            signupPassword.value = '';
+            signupPasswordRepear.value = '';
+
+            document.title = 'Авторизация - Planner';
+        }
+    })
+})
+
+// Фокусировка инпутов формы
 forEach.call(authField, function (_this) {
     this.addEventListener('focusin', ClassAdd(_this, true));
     this.addEventListener('focusout', ClassAdd(_this, false));
@@ -22,38 +81,65 @@ function ClassAdd (_this, _true) {
             } else {
                 input.classList.remove('focus');
             }
-
-            input.addEventListener('input', () => {
-                if(login.value.length >= 1 && password.value.length >= 1) {
-                    submit.classList.add('active');
-                } else {
-                    submit.classList.remove('active');
-                }
-            })
         }
     })
 }
 
+
+//======================
+// Валидация регистрации
+//======================
+formInputs.forEach( elem => {
+    elem.addEventListener('input', () => {
+        if(signupLogin.value.length >= 1 &&
+            signupEmail.value.length >= 1 &&
+            signupPassword.value.length >= 1 &&
+            signupPasswordRepear.value.length >= 1) {
+            document.getElementById('signup-submit').classList.add('active');
+            document.getElementById('signup-submit').removeAttribute('disabled');
+        } else {
+            document.getElementById('signup-submit').classList.remove('active');
+            document.getElementById('signup-submit').setAttribute('disabled', '');
+        }
+
+        if(signinLogin.value.length >= 1 && signinPassword.value.length >= 1) {
+            document.getElementById('signin-submit').classList.add('active');
+            document.getElementById('signin-submit').removeAttribute('disabled');
+        } else {
+            document.getElementById('signin-submit').classList.remove('active');
+            document.getElementById('signin-submit').setAttribute('disabled', '');
+        }
+
+    })
+})
+
 // Кнопка "Показать пароль"
 // Если произошел клик по иконке - показать пароль
-let buttonPasswordOn = document.querySelectorAll('.auth-button-views-icon'),
-    buttonPasswordOff = document.querySelectorAll('.auth-button-views-icon-closed'),
-    pass = document.getElementById('password');
+let buttonPasswordShow = document.querySelectorAll('.form-password-show'),
+    buttonPasswordHide = document.querySelectorAll('.form-password-hide');
 
-for (let element of buttonPasswordOn) {
-    for (let elem of buttonPasswordOff) {
-        
-        element.addEventListener('click', () => {
-            pass.setAttribute('type', 'text');
-            element.classList.remove('active');
-            elem.classList.add('active');
+
+
+
+for (let show of buttonPasswordShow) {
+    for (let hide of buttonPasswordHide) {
+
+        show.addEventListener('click', () => {
+            for(let passwordInput of passwordInputs) {
+                passwordInput.setAttribute('type', 'text');
+            }
+            show.classList.remove('active');
+            hide.classList.add('active');
         })
 
-        elem.addEventListener('click', () => {
-            pass.setAttribute('type', 'password');
-            element.classList.add('active');
-            elem.classList.remove('active');
+        hide.addEventListener('click', () => {
+            for(let passwordInput of passwordInputs) {
+                passwordInput.setAttribute('type', 'password');
+            }
+            show.classList.add('active');
+            hide.classList.remove('active');
         })
     }
 }
+
 

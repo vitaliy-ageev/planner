@@ -12,46 +12,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Planner: Авторизация</title>
+    <title>Авторизация - Planner</title>
 <meta name="description" content="Описание... ">
 <meta name="keywords" content="Ключевые слова... ">
 </head>
 <body>
-    <main class='header'>
+    <main class='main'>
         <div class="container">
             <div class="container-inner">
-                <!-- Signin & Signup Block-->
-                <div class="auth-block">
-                    <div class="auth-header">
-                        <div class="logo">
-                            <img class='logo-image' src="./tmp/registration/logo.png" alt="">
+                <!-- Authorization Block-->
+                <div id='authorization' class="authorization-block">
+                    <!--Header-->
+                    <div class="authorization-header">
+                        <div class="authorization-logotype-block">
+                            <img class='authorization-logotype' src="./tmp/registration/logo.png" alt="">
+                            <h1 id='welcome' class="authorization-logotype-text">
+                                Добро пожаловать в Planner
+                            </h1>
+                            <h1 id='join' class="authorization-logotype-text" style="display: none;">
+                                Присоединяйтесь к Planner
+                            </h1>
                         </div>
                     </div>
-                    <!-- Sign In -->
-                    <div class="signin-block">
+                    <!-- Navigation -->
+                    <div class="authorization-navigation">
+                        <h2 name='login' class="authorization-navigation-item active">
+                            Войти
+                        </h2>
+                        <h2 name='registration' class="authorization-navigation-item">
+                            Зарегистрироваться
+                        </h2>
+                    </div>
+                    <!-- Sign In Block -->
+                    <div id='signin' class="signin-block flex-column-block active">
                         <!-- Sign In Form -->
-                        <form action="." class="signin-form" autocomplete="off" method="POST">
-                            <div class="signin-form-container">
+                        <form name='signin-form' action="." class="signin-form form-block" autocomplete="off" method="POST">
+                            <div class="signin-form-container form-container">
                                 <!--Name-->
-                                <div class="signin-field">
-                                    <span class="signin-label-field">
-                                        <label for="login" class="signin-label">Имя пользователя</label>
+                                <div class="signin-form-field form-field">
+                                    <span class="signin-form-label-field form-label-field">
+                                        <label for="login" class="signin-form-label form-label">Имя пользователя</label>
                                     </span>
-                                    <span class="signin-input-field">
-                                        <input id="login" type="text" name="login" class="signin-input focus" required="" autofocus="">
+                                    <span class="signin-form-input-field form-input-field">
+                                        <input id="login" type="text" name="signin-login" class="signin-form-input form-input focus" required="" autofocus>
                                     </span>
                                 </div>
                                 <!-- Password -->
-                                <div class="signin-field">
-                                    <span class="signin-label-field">
-                                        <label for="password" class="signin-label">Пароль</label>
+                                <div class="signin-form-field form-field">
+                                    <span class="signin-form-label-field form-label-field">
+                                        <label for="password" class="signin-form-label form-label">Пароль</label>
                                     </span>
-                                    <span class="signin-input-field">
-                                        <input id="password" type="password" name="password" class="signin-input" required="">
-                                        <!-- Button View -->
-                                    <div class="auth-button-views">
-                                        <!--Svg Views Icon-->
-                                        <svg class="auth-button-views-icon active" version="1.1" id="views_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.85 488.85" style="enable-background:new 0 0 488.85 488.85;" xml:space="preserve">
+                                    <span class="signin-form-input-field form-input-field">
+                                        <input id="password" type="password" name="signin-password" class="signin-form-input form-input input-password" required="">
+                                        <!-- Password Show Block -->
+                                        <div class="signin-form-password-show-block form-password-show-block">
+                                            <!-- Password Show Icon -->
+                                            <svg class="signin-form-password-show form-password-show active" version="1.1" id="views_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.85 488.85" style="enable-background:new 0 0 488.85 488.85;" xml:space="preserve">
 <g>
   <path d="M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2
     s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025
@@ -90,9 +106,8 @@
                                             <g>
 </g>
 </svg>
-
-                                        <!--Svg Views Closed Icon-->
-                                        <svg class="auth-button-views-icon-closed" version="1.1" id="views_closed" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.9 488.9" style="enable-background:new 0 0 488.9 488.9;" xml:space="preserve">
+                                            <!-- Password Hide Icon -->
+                                            <svg class="signin-form-password-hide form-password-hide" version="1.1" id="views_closed" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.9 488.9" style="enable-background:new 0 0 488.9 488.9;" xml:space="preserve">
 <style type="text/css">
   .st0{fill:none;stroke:#FFFFFF;stroke-width:49;stroke-miterlimit:10;}
   .st1{fill:none;stroke:#B3B3B3;stroke-width:28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
@@ -106,31 +121,141 @@
                                             <line class="st0" x1="403" y1="85.8" x2="85.9" y2="402.9"></line>
                                             <line class="st1" x1="403" y1="85.8" x2="85.9" y2="402.9"></line>
 </svg>
-
-                                    </div>
+                                        </div>
                                     </span>
                                 </div>
                                 <!-- Forgot Password -->
-                                <div class="password-forgot">
-                                    <a href="" class="password-forgot">
+                                <div class="signin-form-password-forgot">
+                                    <a href="" class="signin-form-password-forgot">
                                         Проблемы со входом в систему?
                                     </a>
                                 </div>
                                 <!-- Button Submit-->
-                                <div class="signin-submit">
-                                    <button id ='submit' type="submit" class="signin-submit-buton" autocomplete="of">
+                                <div class="signin-form-submit form-submit">
+                                    <button id='signin-submit' disabled type="submit" class="signin-form-submit-button form-submit-button" autocomplete="of">
                                         Войти
                                     </button>
                                 </div>
                             </div>
                         </form>
+                    </div>
 
+                    <!--Sign Up Block-->
+                    <div id='signup' class="signup-block flex-column-block">
+                        <!-- Sign Up Form -->
+                        <form action="." name='signup-form' class="signup-form form-block" autocomplete="off" method="POST">
+                            <div class="signup-form-container form-container">
+                                <!--Login-->
+                                <div class="signup-form-field form-field">
+                                    <span class="signup-form-label-field form-label-field">
+                                        <label for="signup-login" class="signup-form-label form-label">Имя пользователя</label>
+                                    </span>
+                                    <span class="signup-form-input-field form-input-field">
+                                        <input id="signup-login" type="text" name="signup-login" class="signup-form-input form-input" required="" autofocus="">
+                                    </span>
+                                </div>
+                                <!--Password-->
+                                <div class="signup-form-field form-field">
+                                    <span class="signup-form-label-field form-label-field">
+                                        <label for="signup-password" class="signup-form-label form-label">Пароль</label>
+                                    </span>
+                                    <span class="signup-form-input-field form-input-field">
+                                        <input id="signup-password" type="password" name="signup-password" class="signup-form-input form-input input-password" required="" autofocus="">
+                                        <!-- Password Show Block -->
+                                        <div class="signup-form-password-show-block form-password-show-block">
+                                            <!-- Password Show Icon -->
+                                            <svg class="signup-form-password-show form-password-show active" version="1.1" id="views_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.85 488.85" style="enable-background:new 0 0 488.85 488.85;" xml:space="preserve">
+<g>
+  <path d="M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2
+    s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025
+    c-62,3.9-113.2-47.2-109.3-109.3c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3
+    C343.725,302.225,302.225,343.725,251.125,347.025z M248.025,299.625c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7
+    c33.4-2.1,61,25.4,58.8,58.8C297.925,275.625,275.525,297.925,248.025,299.625z"></path>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+                                            <g>
+</g>
+</svg>
+                                            <!-- Password Hide Icon -->
+                                            <svg class="signup-form-password-hide form-password-hide" version="1.1" id="views_closed" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 488.9 488.9" style="enable-background:new 0 0 488.9 488.9;" xml:space="preserve">
+<style type="text/css">
+  .st0{fill:none;stroke:#FFFFFF;stroke-width:49;stroke-miterlimit:10;}
+  .st1{fill:none;stroke:#B3B3B3;stroke-width:28;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+                                            <g>
+  <path d="M244.4,98.7C151,98.7,66.3,149.8,3.8,232.8c-5.1,6.8-5.1,16.3,0,23.1C66.3,339,151,390.1,244.4,390.1S422.5,339,485,256
+    c5.1-6.8,5.1-16.3,0-23.1C422.5,149.8,337.8,98.7,244.4,98.7z M251.1,347c-62,3.9-113.2-47.2-109.3-109.3
+    c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3C343.7,302.2,302.2,343.7,251.1,347z M248,299.6
+    c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7c33.4-2.1,61,25.4,58.8,58.8C297.9,275.6,275.5,297.9,248,299.6z"></path>
+</g>
+                                            <line class="st0" x1="403" y1="85.8" x2="85.9" y2="402.9"></line>
+                                            <line class="st1" x1="403" y1="85.8" x2="85.9" y2="402.9"></line>
+</svg>
+                                        </div>
+                                    </span>
+                                </div>
+                                <!--Repeat Password-->
+                                <div class="signup-form-field form-field">
+                                    <span class="signup-form-label-field form-label-field">
+                                        <label for="signup-password-repeat" class="signup-form-label form-label">Подтвердите пароль</label>
+                                    </span>
+                                    <span class="signup-form-input-field form-input-field">
+                                        <input id="signup-password-repeat" type="password" name="signup-password-repeat" class="signup-form-input form-input input-password" required="" autofocus="">
+                                    </span>
+                                </div>
+                                <!--Email-->
+                                <div class="signup-form-field form-field">
+                                    <span class="signup-form-label-field form-label-field">
+                                        <label for="signup-email" class="signup-form-label form-label">Электронный адрес</label>
+                                    </span>
+                                    <span class="signup-form-input-field form-input-field">
+                                        <input id="signup-email" type="text" name="signup-email" class="signup-form-input form-input" required="" autofocus="">
+                                    </span>
+                                </div>
+                                <!-- Button Submit-->
+                                <div class="signup-form-submit form-submit">
+                                    <button id ='signup-submit' disabled type="submit" class="signup-form-submit-button form-submit-button" autocomplete="off">
+                                        Зарегистрироваться
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
-    <!--Connection of JavaScript-->
-    <script src="./js/registration/script.js"></script>
+
+<!--Connection of JavaScript-->
+<script src="./js/registration/script.js"></script>
 </body>
 </html>
