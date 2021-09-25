@@ -1,3 +1,10 @@
+let _init = [];
+window.onload = function () {
+    for ( var i in _init ) {
+        if ( typeof( _init[i] ) == 'function' ) _init[i]();
+    }
+
+}
 let authField = document.querySelectorAll('.form-field'),
     forEach = Array.prototype.forEach,
     formInputs = document.querySelectorAll('.form-input'),
@@ -14,6 +21,9 @@ let signinLogin = document.forms['signin-form']['signin-login'],
     signupEmail = document.forms['signup-form']['signup-email'],
     signupPassword = document.forms['signup-form']['signup-password'],
     signupPasswordRepear = document.forms['signup-form']['signup-password-repeat'];
+
+let buttonPasswordShow = document.querySelectorAll('.form-password-show'),
+    buttonPasswordHide = document.querySelectorAll('.form-password-hide');
 
 // Навигация
 // Проходимся циклом по всем кнопкам и сначала удаляем класс у всех кнопок, а потом добавляем текущей
@@ -42,6 +52,21 @@ forEach.call(navigationItems, (_this) => {
             signupPasswordRepear.value = '';
 
             document.title = 'Регистрация - Planner';
+
+            for (let hide of buttonPasswordHide) {
+
+            }
+
+            for (let show of buttonPasswordShow) {
+                for (let hide of buttonPasswordHide) {
+                    for(let passwordInput of passwordInputs) {
+                        passwordInput.setAttribute('type', 'password');
+                    }
+                    show.classList.add('active');
+                    hide.classList.remove('active');
+                }
+            }
+
         } else {
             welcome.style.display = 'block';
             join.style.display = 'none';
@@ -59,6 +84,16 @@ forEach.call(navigationItems, (_this) => {
             signupPasswordRepear.value = '';
 
             document.title = 'Авторизация - Planner';
+
+            for (let show of buttonPasswordShow) {
+                for (let hide of buttonPasswordHide) {
+                    for(let passwordInput of passwordInputs) {
+                        passwordInput.setAttribute('type', 'password');
+                    }
+                    show.classList.add('active');
+                    hide.classList.remove('active');
+                }
+            }
         }
     })
 })
@@ -115,12 +150,6 @@ formInputs.forEach( elem => {
 
 // Кнопка "Показать пароль"
 // Если произошел клик по иконке - показать пароль
-let buttonPasswordShow = document.querySelectorAll('.form-password-show'),
-    buttonPasswordHide = document.querySelectorAll('.form-password-hide');
-
-
-
-
 for (let show of buttonPasswordShow) {
     for (let hide of buttonPasswordHide) {
 
@@ -141,5 +170,4 @@ for (let show of buttonPasswordShow) {
         })
     }
 }
-
 
