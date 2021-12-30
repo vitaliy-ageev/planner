@@ -3,8 +3,8 @@ window.onload = function () {
     for ( var i in _init ) {
         if ( typeof( _init[i] ) == 'function' ) _init[i]();
     }
-
 }
+
 let authField = document.querySelectorAll('.form-field'),
     forEach = Array.prototype.forEach,
     formInputs = document.querySelectorAll('.form-input'),
@@ -95,14 +95,14 @@ forEach.call(navigationItems, (_this) => {
                 }
             }
         }
-    })
+    });
 })
 
 // Фокусировка инпутов формы
 forEach.call(authField, function (_this) {
     this.addEventListener('focusin', ClassAdd(_this, true));
     this.addEventListener('focusout', ClassAdd(_this, false));
-})
+});
 
 // Функция для обработок действий
 function ClassAdd (_this, _true) {
@@ -117,7 +117,7 @@ function ClassAdd (_this, _true) {
                 input.classList.remove('focus');
             }
         }
-    })
+    });
 }
 
 
@@ -145,7 +145,7 @@ formInputs.forEach( elem => {
             document.getElementById('signin-submit').setAttribute('disabled', '');
         }
 
-    })
+    });
 })
 
 // Кнопка "Показать пароль"
@@ -159,7 +159,7 @@ for (let show of buttonPasswordShow) {
             }
             show.classList.remove('active');
             hide.classList.add('active');
-        })
+        });
 
         hide.addEventListener('click', () => {
             for(let passwordInput of passwordInputs) {
@@ -167,7 +167,7 @@ for (let show of buttonPasswordShow) {
             }
             show.classList.add('active');
             hide.classList.remove('active');
-        })
+        });
     }
 }
 
